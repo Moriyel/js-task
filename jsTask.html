@@ -1,0 +1,56 @@
+<script>
+  let dayResult = (distance)=>{
+let  speedDay=50;
+let nightRollback=-30;
+let result=0;
+let isDay=true;
+let valueDay=1;
+while(result<distance){
+  if(isDay){
+    result+=speedDay;
+    isDay= false;
+  }
+  else{
+    result+=nightRollback;
+    isDay= true;
+    valueDay++;
+  }
+}
+return valueDay;
+   
+}
+
+console.log(dayResult(100)) // 4
+
+const funcHandshake = (peopleCount) => {
+    let people = 0;
+    
+    let handshakeCount = 0;
+
+    while ( people < peopleCount ) {
+        people++;
+        handshakeCount += people - 1;
+    }
+ 
+    return handshakeCount;
+    };
+
+
+console.log(funcHandshake(10)); // 45
+
+
+const duplicateString = (string) => {
+  const stringArray = string.split(",");
+  result = {}
+  stringArray.forEach(element => {
+    if(!result[element]){result[element] = 1}else{
+        result[element] = result[element] + 1
+    }
+
+  });
+
+  return Object.keys(result).join(",");
+}
+
+console.log(duplicateString("кошка,собака,лошадь,корова,кошка"))
+</script>
